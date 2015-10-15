@@ -11,7 +11,9 @@ class SqlConnectionDemo
     {
         // 1. Instantiate the connection
         SqlConnection conn = new SqlConnection(
-            "Data Source=.\\SQLEXPRESS;Initial Catalog=testdb01;Integrated Security=SSPI;");
+            // testdb01 is database name
+            "Data Source=.\\SQLEXPRESS;Initial Catalog=testdb01;Integrated Security=SSPI;"
+        );
 
         SqlDataReader rdr = null;
         try
@@ -20,6 +22,7 @@ class SqlConnectionDemo
             conn.Open();
 
             // 3. Pass the connection to a command object
+            // kittens is name of table in testdb01
             SqlCommand cmd = new SqlCommand("select * from kittens", conn);
 
             //
